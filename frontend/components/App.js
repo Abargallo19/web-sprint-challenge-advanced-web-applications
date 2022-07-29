@@ -74,6 +74,7 @@ export default function App() {
       <div id="wrapper" style={{ opacity: spinnerOn ? "0.25" : "1" }}> {/* <-- do not change this line */}
         <h1>Advanced Web Applications</h1>
         <nav>
+          console.log('Test')
           <NavLink id="loginScreen" to="/">Login</NavLink>
           <NavLink id="articlesScreen" to="/articles">Articles</NavLink>
         </nav>
