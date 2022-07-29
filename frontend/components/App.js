@@ -138,7 +138,7 @@ export default function App() {
           
           <NavLink id="loginScreen" to="/">Login</NavLink>
           <NavLink id="articlesScreen" to="/articles">Articles</NavLink>
-        </nav>
+        </nav>  
         <Routes>
           <Route path="/" element={<LoginForm login= { login } />} />
           <Route path="articles" element={
