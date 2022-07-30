@@ -59,7 +59,7 @@ export default function App() {
     // to the Articles screen. Don't forget to turn off the spinner!
     setMessage('');
     setSpinnerOn(true);
-    axios.post('http://localhost:9000/api/login', { username, password })
+    axios.post(loginUrl, { username, password })
       .then(res => {
         setSpinnerOn(false)
         localStorage.setItem('token', res.data.token)
@@ -79,7 +79,7 @@ export default function App() {
     // if it's a 401 the token might have gone bad, and we should redirect to login.
     // Don't forget to turn off the spinner!
     setSpinnerOn(true);
-    axiosWithAuth().get('http://localhost:9000/api/articles')
+    axiosWithAuth().get(articlesUrl)
       .then(res => {
         setSpinnerOn(false)
         setMessage(res.data.message)
@@ -93,7 +93,7 @@ export default function App() {
     // The flow is very similar to the `getArticles` function.
     // You'll know what to do! Use log statements or breakpoints
     // to inspect the response from the server.
-    axiosWithAuth().post('http://localhost:9000/api/articles', article)
+    axiosWithAuth().post(articlesUrl, article)
     .then(res => {
       setMessage(res.data.message)
       setArticles([...articles, res.data.article])

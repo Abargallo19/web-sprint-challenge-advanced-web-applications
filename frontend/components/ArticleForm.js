@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import PT from 'prop-types'
 
-const initialFormValues = { title: '', text: '', topic: '' }
+const initialFormValues = { 
+  title: '', 
+  text: '', 
+  topic: '' 
+}
 
 export default function ArticleForm(props) {
   const { currentArticle, updateArticle, postArticle } = props 

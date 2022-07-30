@@ -1,13 +1,19 @@
 import React, { useEffect } from 'react'
 import { Navigate } from 'react-router-dom'
 import PT from 'prop-types'
-import axios from 'axios'
+
 
 export default function Articles(props) {
   // ✨ where are my props? Destructure them here
-    const { articles, getArticles, setCurrentArticleId, deleteArticle } = props
+    const { 
+      articles, 
+      getArticles, 
+      setCurrentArticleId, 
+      deleteArticle 
+    } = props
   // ✨ implement conditional logic: if no token exists
   // we should render a Navigate to login screen (React Router v.6)
+  if(!localStorage.getItem('token')) return <Navigate to="/" />;
 
   useEffect(() => {
     // ✨ grab the articles here, on first render only
@@ -18,7 +24,7 @@ export default function Articles(props) {
     setCurrentArticleId(id)
   }
 
-  if(!localStorage.getItem('token')) return <Navigate to="/" />;
+  
 
   return (
     // ✨ fix the JSX: replace `Function.prototype` with actual functions
