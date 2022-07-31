@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Navigate } from 'react-router-dom'
 import PT from 'prop-types'
-import axios from 'axios'
+import axios from 'axios';
 
 
 export default function Articles(props) {
@@ -44,8 +44,8 @@ export default function Articles(props) {
                   <p>Topic: {art.topic}</p>
                 </div>
                 <div>
-                  <button disabled={true} onClick={ () => handleEdit(art.article_id) }>Edit</button>
-                  <button disabled={true} onClick={ () => deleteArticle(art.article_id) }>Delete</button>
+                  <button onClick={ () => handleEdit(art.article_id) }>Edit</button>
+                  <button onClick={ () => deleteArticle(art.article_id) }>Delete</button>
                 </div>
               </div>
             )
